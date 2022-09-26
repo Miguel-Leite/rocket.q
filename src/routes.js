@@ -3,8 +3,8 @@ const QuestionController = require('./controllers/QuestionController')
 
 const routes = express.Router()
 
-routes.get('/', (req, res) => res.render('index'))
-routes.get('/room', (req, res) => res.render('room'))
+routes.get('/', (req, res) => res.render('index', { page: 'enter-room' }))
+routes.get('/room', (req, res) => res.render('index', { page: 'create-room' }))
 routes.get('/create-pass', (req, res) => res.render('create-pass'))
 
 // Set controllers
