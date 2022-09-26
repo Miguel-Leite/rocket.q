@@ -2,9 +2,9 @@
     "name": "rocket.q",
     "version": "1.0.0",
     "description": "Projecto desenvolvido para gerênciar perguntas anônimas de usuário direcionadas ao dono da página Projecto desenvolvido na semana NLW Rocketseat na missão discover.",
-    "main": "index.js",
+    "main": "src/server.js",
     "scripts": {
-        "start": "node src/server.js"
+        "start": "nodemon ."
     },
     "keywords": [],
     "author": "Miguel Leite",
