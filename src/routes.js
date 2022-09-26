@@ -10,6 +10,6 @@ routes.get('/room/:room', (req, res) => res.render('room'))
 
 // Set controllers with routers type POST
 routes.post('/room/:room/:question/:action', QuestionController.index)
-routes.post('/room/create-room', RoomController.create)
+routes.post('/create-room', RoomController.create)
 
 module.exports = routes
