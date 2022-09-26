@@ -8,10 +8,10 @@ const initDb = {
             id INTEGER PRIMARY KEY,
             pass TEXT
         )`)
-        await db.exec(`CREATE TABLE question(
+        await db.exec(`CREATE TABLE questions(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT
-            check INT
+            title TEXT,
+            read INT
         )`)
         await db.close()
     }
