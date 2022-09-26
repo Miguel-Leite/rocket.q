@@ -95,7 +95,28 @@ button.outlined,
     border: .2rem solid var(--blue);
 }
 
+button.red,
+.button.red {
+    background: var(--red);
+    color: var(--white);
+    cursor: pointer;
+}
+
+button.grey,
+.button.grey {
+    background: var(--grey-light);
+    color: var(--grey-dark);
+    cursor: pointer;
+}
+
+
+/****** HEADER ********/
+
 .content header {
     width: 80%;
     margin: 3.5rem auto;
+}
+
+.content header img {
+    width: 16.7rem;
 }
