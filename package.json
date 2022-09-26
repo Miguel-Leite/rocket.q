@@ -4,7 +4,7 @@
     "description": "Projecto desenvolvido para gerênciar perguntas anônimas de usuário direcionadas ao dono da página Projecto desenvolvido na semana NLW Rocketseat na missão discover.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node src/server.js"
     },
     "keywords": [],
     "author": "Miguel Leite",
@@ -12,5 +12,8 @@
     "dependencies": {
         "ejs": "^3.1.8",
         "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
     }
 }
