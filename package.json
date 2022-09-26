@@ -1,0 +1,12 @@
+{
+    "name": "rocket.q",
+    "version": "1.0.0",
+    "description": "Projecto desenvolvido para gerênciar perguntas anônimas de usuário direcionadas ao dono da página Projecto desenvolvido na semana NLW Rocketseat na missão discover.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Miguel Leite",
+    "license": "ISC"
+}
