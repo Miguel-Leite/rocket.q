@@ -24,14 +24,16 @@
                 <img src="/images/logo.svg" alt="Rocket.Q Logo" />
             </a>
             <div class="buttons">
-                <div class="button outlined" id="room-id" data-id="323243"> #323243 <img src="/images/copy.svg" alt="Copiar numero da sala"> </div>
+                <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                    #
+                    <%= roomId %> <img src="/images/copy.svg" alt="Copiar numero da sala"> </div>
                 <a href="#" class="button"> <img src="/images/users-white.svg" alt="Criar uma sala" /> Criar Sala </a>
             </div>
         </header>
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="#">
+                <form action="/" method="POST">
                     <label class="sr-only" for="question">O que você quer perguntar?</label>
                     <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
                     <footer>
