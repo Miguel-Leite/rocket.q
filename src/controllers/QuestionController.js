@@ -6,7 +6,6 @@ module.exports = {
         const action = req.params.action;
         const pwd = req.body.password;
 
-        console.log(`room = ${roomId}, questionId = ${questionId}, action = ${action}, password = ${pwd}`)
     },
     async create(req, res) {
         const db = await Database()
