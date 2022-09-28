@@ -33,6 +33,20 @@ module.exports = {
         const roomId = req.params.room
         const questions = await db.all(`SELECT * FROM questions WHERE room_id = ${roomId} AND read=0`);
         const questionsRead = await db.all(`SELECT * FROM questions WHERE room_id = ${roomId} AND read=1`);
-        res.render('room', { roomId: roomId, questions: questions, questionsRead: questionsRead })
+        let isNoQuestion = true;
+        if (questions.length == 0 && questionsRead.length == 0) {
+            isNoQuestion = false;
+        }
+        res.render('room', { roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestion: isNoQuestion })
+    },
+
+    async enter(req, res) {
+        const db = await Database()
+        const roomId = req.body.roomId;
+        const findRoom = await db.all(`SELECT id FROM rooms WHERE id = ${roomId}`);
+        if (findRoom.length == 0) {
+            return res.redirect(`/create-pass`)
+        }
+        return res.redirect(`/room/${roomId}`)
     }
 }

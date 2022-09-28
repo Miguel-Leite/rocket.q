@@ -45,47 +45,50 @@
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
-                    <% questions.forEach(question => { %>
-                        <div class="question-wrapper">
-                            <div class="question-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="Avatar">
-                                </div>
-                                <div class="question">
-                                    <p>
-                                        <%= question.title%>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="actions">
-                                <a href="javascript:;" class="check" data-id="<%= question.id%>">
-                                    <img src="/images/check.svg" alt="Marca como lida"> Marca com lida
-                                </a>
-                                <a href="javascript:;" class="delete" data-id="<%= question.id%>">
-                                    <img src="/images/trash.svg" alt="Excluir"> Excluir
-                                </a>
-                            </div>
-                        </div>
-                        <%})%>
-                            <% questionsRead.forEach(questionRead => { %>
-                                <div class="question-wrapper read">
-                                    <div class="question-content">
-                                        <div class="user">
-                                            <img src="/images/user.svg" alt="Avatar">
+                    <% if (!isNoQuestion){%>
+                        <%- include('parts/no-questions.ejs')%>
+                            <%}%>
+                                <% questions.forEach(question => { %>
+                                    <div class="question-wrapper">
+                                        <div class="question-content">
+                                            <div class="user">
+                                                <img src="/images/user.svg" alt="Avatar">
+                                            </div>
+                                            <div class="question">
+                                                <p>
+                                                    <%= question.title%>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="question">
-                                            <p>
-                                                <%= questionRead.title%>
-                                            </p>
+                                        <div class="actions">
+                                            <a href="javascript:;" class="check" data-id="<%= question.id%>">
+                                                <img src="/images/check.svg" alt="Marca como lida"> Marca com lida
+                                            </a>
+                                            <a href="javascript:;" class="delete" data-id="<%= question.id%>">
+                                                <img src="/images/trash.svg" alt="Excluir"> Excluir
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="actions">
-                                        <a href="javascript:;" class="delete" data-id="<%= questionRead.id%>">
-                                            <img src="/images/trash.svg" alt="Excluir"> Excluir
-                                        </a>
-                                    </div>
-                                </div>
-                                <%})%>
+                                    <%})%>
+                                        <% questionsRead.forEach(questionRead => { %>
+                                            <div class="question-wrapper read">
+                                                <div class="question-content">
+                                                    <div class="user">
+                                                        <img src="/images/user.svg" alt="Avatar">
+                                                    </div>
+                                                    <div class="question">
+                                                        <p>
+                                                            <%= questionRead.title%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="actions">
+                                                    <a href="javascript:;" class="delete" data-id="<%= questionRead.id%>">
+                                                        <img src="/images/trash.svg" alt="Excluir"> Excluir
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <%})%>
                 </div>
             </section>
         </main>
@@ -97,7 +100,7 @@
             <p>Tem certeza que você deseja excluir esta pergunta?</p>
             <form action="#" method="post">
                 <label class="sr-only" for="password">Digite sua senha admin</label>
-                <input type="password" name="password" id="password" placeholder="Digite a sua senha" />
+                <input type="password" name="password" id="password" placeholder="Digite a sua senha" required />
                 <div class="buttons">
                     <div class="button grey cancel">Cancelar</div>
                     <button type="submit" class="red">Sim, excluir</button>
